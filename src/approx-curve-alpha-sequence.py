@@ -33,14 +33,14 @@ def approx2(arg_x, arg_dx, arg_dx2, step=0.05):
         points = a * alpha ** 3 + b * alpha ** 2 + c * alpha + d
         ax2.scatter(points[:, 0], points[:, 1], marker='x', s=1, c='r')
         arg_dx = 3 * a + 2 * b + c
-        arg_dx = arg_dx / np.linalg.norm(arg_dx) * np.linalg.norm(arg_x[i + 1] - arg_x[i]) / 4
+        arg_dx = arg_dx / np.linalg.norm(arg_dx) * np.linalg.norm(arg_x[i + 1] - arg_x[i])/4
         arg_dx2 = 6 * a + 2 * b
-        arg_dx2 = arg_dx2 / np.linalg.norm(arg_dx2) * np.linalg.norm(arg_x[i + 1] - arg_x[i]) / 8
+        arg_dx2 = arg_dx2 / np.linalg.norm(arg_dx2) * np.linalg.norm(arg_x[i + 1] - arg_x[i])/16
 
 
 f, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 10))
 
-step_size = 0.6
+step_size = 0.7
 x = np.linspace(2, 5, 5).reshape((-1, 1))
 x = np.hstack((x, x + 1))
 dx = np.array([1, 1])
