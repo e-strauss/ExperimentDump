@@ -1,7 +1,7 @@
 clear
 current="$(pwd)"
 echo $current
-cd /Users/eliasstrauss/Desktop/TU/systemds-fork
+cd $SYSTEMDS_ROOT
 cd scripts
 echo "\nscripts:"
 grep $1 -r . --colour
